@@ -1,0 +1,10 @@
+Please solve the following question:
+# Description
+{description}
+# Function Specification
+Function name: {function_name}
+Function signature: {function_signature}
+Function docstring: {function_docstring}
+Programming Language: {language}
+## Output Requirements
+Provide the solution code and nothing else. Wrap your solution with "```cpp" and "```" markers. Main method or unit tests are NOT needed.

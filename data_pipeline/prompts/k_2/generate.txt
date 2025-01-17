@@ -1,0 +1,66 @@
+<|im_start|>user
+I need your help creating a high-quality programming exam question for my {category} course. The question must be framed as a single function that tests students' understanding of the following concepts: 
+
+{skill_list_with_definition}
+
+My students just learned these concepts, and the exam question should simultaneously test deep understanding in both of these concepts. That is, students must creatively combine skills from these two concepts to arrive at successful solutions. 
+
+The programming language taught in my course is {programming_language}. The students will have {time_limit_minutes} minutes to complete the programming question.
+
+## Function Requirements
+1. The question MUST be defined through a single function. The correctness of students' submissions must be evaluable through unit tests.
+2. Provide:
+   - Function signature with ONLY primary or composite data types as parameters
+   - Comprehensive docstring with:
+     * Parameter descriptions
+     * Return value description 
+   - Clear problem statement
+3. Do NOT
+   - Ask for analysis of any sort. Analysis will NOT be testable through unit tests.
+   - Ask follow-up questions. We only want ONE question.
+   - Provide examples of inputs - outputs in either the problem statement or docstring. Our human colleagues will handle the writing of examples.
+
+## Design Rubric
+
+1. Core Concept Testing
+   - The question must require an expertise in BOTH concepts in order to be solved. 
+   - The question must combine the two concepts in a meaningful way. Lay out the topics / skills associated with each concept, and find an interesting combination as the basis of your design.
+   - The question should NOT require any knowledge outside of the scope of the two concepts. We do not punish students for what they have not learned.
+
+2. Difficulty and Originality
+   - Novelty: Must be distinct from common textbook/online examples
+   - Appropriate for college-level CS students as exam questions.
+   - Complexity: Appropriate for college-level CS students as exam questions. The solution should be approximately {solution_lines} lines.
+
+3. Technical Constraints
+   - Input Parameters: Only primary data types (int, float, str, list, tuple, dict) or composite data types.
+   - Return Value: Must be a primary data type or composite data types.
+   - Implementation: 
+     * No random functions
+     * No file I/O
+     * No global variables
+
+## Sample Solution
+In addition, I want you to help me implement the sample solution for the question you designed. The sample solution you provide will serve as a reference solution to our staff, therefore it must be correct and robust to corner cases. Includes necessary import statements. 
+
+The sample solution should contain only the implemented function. Do NOT write any testing in your sample solution.
+
+## Output Formating
+You should format your response into a JSON object with the following fields:
+```json
+{{
+    "function_name": str,
+    "function_signature": str,
+    "function_docstring":str,
+    "problem_statement": str,
+    "solution": str
+}}
+```
+- All strings must use proper JSON escaping (\n for newlines, \" for quotes)
+- Maintain consistent function names and types across all fields
+- No trailing commas in JSON structure
+- All fields are required and must be non-null
+- Your response should contain ONLY the json object.
+
+We will integrate your response into an automated pipeline, therefore you **must** follow our format rule precisely. Please make sure that your response contains ONLY the json object.
+<|im_end|>

@@ -1,0 +1,47 @@
+<|im_start|>system
+You are ChatGPT, a top-notch AI expert in computer science. You use your valuable domain knowledge to craft high-quality synthetic coding data. You are helpful and patient, appreciate the importance of details, and always carefully adhere to the instructions given by your human colleagues. 
+<|im_end|>
+<|im_start|>user
+# Task Description
+We are a research team focused on creating high-quality coding datasets to train advanced machine intelligence. Your task is to help us generate synthetic coding scripts from a given set of topics. 
+
+## Data Model
+We use the assumption from topic modeling works that real-world data arises from a combination of a small number of topics. Therefore, to generate synthtic data that imitate the diversity and quality of human-expert code, we rigorously estimated the distribution of core coding concepts in catagories such as algorithms, system protocols, pattern recognition, fron-end development, etc. from real-world data.
+
+## Task Specification
+We will give you a set of one or more topics in coding, along with a programming language. Your job is to design and complete a function that satisfies all of the following requirements.
+
+(1) The function should revolve around the given set of coding topics. If multiple topics are given, we kindly ask that you find an interesting intersection between those topics and design a function that equally involve those multiple skills.
+
+(2) The function should be adequately complex, suited as quiz questions for college-level students studying computer science.
+
+(2) You should design a function that's helpful. The function should showcase skills that solve challenges or improve efficiency. 
+
+(3) The code should be CORRECT. That is, given the right compiler environment, our human colleagues should be execute the function without any modification to the function itself. Your function should be robust to corner cases. In addition, the coding style should be clean, efficient, and well-documented.
+
+(4) It should be common that your function need to call external libraries. If true, you should include lines to correctly import all relevant libraries and packages.
+
+## Output format
+Pleae format your output in a JSON object with the following fields:
+```json
+{{
+    "function": str
+    "description": str
+}}
+```
+You should describe the purpose of the function and its expected inputs / outputs types in the "description" field.
+
+# Let's Get Started
+
+Now consider this following set of concepts:
+
+{latent_skills}
+
+And a corresponding programming language:
+
+{coding_language}
+
+Now please generate a plausible piece of coding function following rules described above. Please do not generate anything else.
+<|im_end|>
+
+

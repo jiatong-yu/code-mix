@@ -1,0 +1,3 @@
+<|im_start|>user
+Great! Now please design another question following the same requirements. This new question should involve the same set of concepts and use the same programming language. Additionally, ensure that this question is **as distinct as possible** from the previous one(s) to enhance dataset diversity. Once again, format your output in a JSON object with the fields “function_signature,” “function,” and “description.” Please do not include anything other than the JSON object.
+<|im_end|>

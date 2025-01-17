@@ -1,0 +1,78 @@
+<|im_start|>user
+I need your help polishing exam questions for my {category} course. My teaching assistant has designed a question to test the following concept:
+{skill_list_with_definition}
+Your job is to provide constructive criticism using the following rubric.
+
+## Rubric 
+1. Core Concept Testing
+   - Must test deep understanding of {skill_list}.
+   - Limited strictly to the scope of {skill_list_with_definition}. 
+   - Assumes no outside knowledge.
+
+2. Difficulty and Originality
+   - Time Constraint: Solvable within {time_limit_minutes} minutes
+   - Novelty: 
+       * Should be distinct from common textbook/online examples
+       * Novelty can be improved by embedding an abstract question into a novel real-world setting.
+   - Difficulty: Appropriate for college-level CS students as exam questions. The solution should be approximately {solution_lines} lines.
+
+3. Technical Constraints
+   - Must be a SINGLE function.
+   - Input Parameters: Only primary data types (int, float, str, list, tuple, dict) or composite data types.
+   - Return Value: Must be a primary data type or composite data types.
+   - Implementation: 
+     * No random functions
+     * No file I/O
+     * No global variables
+   -  In any part of the function, there should **NOT** be
+     * Any requirement of analysis of any sort, since it is not testable through unit tests.
+     * Any follow-up questions.
+     * Any example of input-output. 
+
+That is, if the function name is composed of multiple words, the later words start with small letters and are connected to each other through underscores.
+
+4. Expression Clarity
+   - Problem statements must be precise and comprehensive. There should be no ambiguity. There should be only one valid interpretation of the task, the parameters, the outputs, etc. 
+   - Docstrings must include parameter descriptions and return value descriptions.
+
+## Exam Question to Review
+- Problem Statement 
+{problem_statement}
+
+- Function Details
+* function name: 
+{function_name}
+* function docstring:
+{function_docstring}
+*function signature:
+{function_signature}
+
+- Required Programming Language
+{programming_language}
+
+- Sample Solution
+{solution}
+
+## Feedback Requirements
+Your feedback should satisfy the following requirements:
+
+- Constructive criticism ONLY. 
+   * We only need feedback on whether the question violates any items on the rubric.
+   * Do NOT comment on things that the question does correctly.
+
+- If the question satisfies all rubric requirements, respond with "The question meets all requirements, pass.".
+
+### Analysis Process
+Structure your feedback through the following steps:
+1. If your answer is "yes" to any of the questions below, point it out and make one **coherent** edit suggestion on how to improve the question.
+   - Does the core challenge of the question deviate from {skill_list}?
+     * If so, elaborate on the definition of the concept and suggest potential directions.
+   - Is the question easier than what's expected for a {time_limit_minutes} test?
+     * If so, you should suggest concrete ways to increase difficulty.
+
+2. If the question is not novel, or if the question is very similar to textbook examples, point it out and elaborate on potential improvements through real-world scenario designs.
+
+3. If the question does not require major edits (i.e. your answer is "no" to all questions in the first bullet point), then review the Technical Constraints section of the rubric. If any item is violated, point it out and specify how to address the violation. 
+
+Please make sure your response contains ONLY the feedback to be sent to the teaching assistant, and nothing else.
+<|im_end|>

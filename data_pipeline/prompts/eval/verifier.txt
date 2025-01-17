@@ -1,0 +1,137 @@
+## Context 
+You will receive a programming question in {programming_language}. We will provide its problem statement, docstring, along with a sample implementation later. Your task is to create a comprehensive suite of unit tests and ensure the implementation passes all tests. Use only bash tools for this task.
+
+## File System Configuration
+Base working directory: {base_dir}
+Full path template: {base_dir}/{output_folder}/{id}/
+
+## Directory Structure to Create
+{base_dir}/{output_folder}/{id}/
+├── solution/
+│   └── solution.{appropriate_extension}
+├── tests/
+│   └── test.{appropriate_extension}
+└── run.bash
+
+## Programming Question
+
+Programming Question ID: {id}
+
+Function name:
+{function_name}
+
+Problem statement:
+{problem_statement}
+
+Function signature: 
+{function_signature}
+
+Function docstring:
+{function_docstring}
+
+Function implementation:
+{code_snippet}
+
+## Required Tasks
+
+Please follow these precise steps:
+
+1. File Structure Setup:
+   - Create a directory named "{base_dir}/{output_folder}/{id}/" and move to this directory.
+   - Inside this directory, create:
+     a. A "solution" folder for the implementation
+     b. A "tests" folder for the test suite
+     c. A "run.bash" script for execution
+
+2. Solution File:
+   - Create "solution.{appropriate_extension}" in the solution folder
+   - Start with the provided function implementation. 
+   - This file should be treated as a working solution that you will debug and improve
+   - Document any changes made to the original implementation with comments explaining why
+
+3. Test File:
+   - Create "test.{appropriate_extension}" in the tests folder
+   - Implement exactly 5 unit tests that:
+     a. Cover different branches of the code
+     b. Include edge cases
+     c. Test both valid and invalid inputs
+     d. Verify expected outputs
+   - If the given problem statement or docstring contains example input-output illustrations:
+     a. Include those examples as test cases.
+     b. Keep track of test cases that come from docstring or problem statement for debugging.
+   - Implement tests using the {test_framework} framework.
+
+4. Test Execution:
+   - Install all required testing frameworks and dependencies
+   - Execute the test suite
+
+5. Debugging and Refinement:
+   - If any tests fail:
+     a. Explicitly analyze the failure reasons (see next section).
+     b. Modify the solution file and/or the test file to fix any bugs or edge cases
+       * If modified test cases come from docstring or problem statement examples, update docstring and/or problem statements to contain correct examples.
+     d. Re-run tests until all pass
+   - The final solution file should contain the correct, optimized implementation
+
+6. Run Script:
+   - Create "run.bash" in the root directory
+   - Script must contain:
+     a. Explicit commands for test execution against the solution file
+     b. Explicit commands that remove compiled binaries (if any) for clean-up.
+   - Do NOT include package installation or environment setup commands. All dependencies and packages installed during development will be preserved and remain available.
+
+7. Termination Conditions:
+   - Termination of the task is allowed under the following three conditions 
+      a. (Normal exit.) After proper modifications, solution passes all unit tests. 
+      b. (Early exit.) The setup or goal of the function is invalid or ambiguous. 
+      c. (Early exit.) After at least *10* rounds of proper attempts, some unit tests still can't be fixed. A proper round of attempt includes: 
+        a. Explicit, thorough analysis of previous round's execution results, following the Test Analysis Framework section.
+        b. Update solution, testing, and/or bash files based on your analysis.
+   - If termination by early exit, **remove all files** you created under the "{base_dir}/{output_folder}/{id}/" directory. You MUST leave the folder blank if early exit.
+
+## Path Handling
+- ALWAYS use absolute paths starting with {base_dir}/
+- NEVER use relative paths like ./ or ../
+- Store full paths in variables at the beginning of operations
+- Validate directory existence before file operations
+
+## Tips
+- To save time, you can assume that all dependencies and packages are already installed in the environment. Only install new environment if there are system errors.
+- Examples in docstring and problem statements are written by AI assistants and have not been verified for correctness. 
+- Sometimes, it’s easier to implement verification algorithms on function outputs instead of enumerating over all correct outputs given inputs.
+
+## Test Analysis Framework
+When a unit test fails, it may indicate a bug in the solution code and/or an error in the unit test itself. To effectively diagnose and resolve the issue, follow these steps:
+1. Review the function
+   - Verbally summarize what is the setup and purpose of the function.
+   - Review the validity of the problem setup.
+      a. **Explicitly** reason whether the problem setup makes sense. Whether it allows ambiguity / multiple interpretations that may be causing the failing unit tests.
+      b. If you decide that the function itself is invalid, you should remove all files under the "{base_dir}/{output_folder}/{id}/" directory and exit your job. 
+
+2. Review the failed test cases
+   - Verbally walk through the test case. What are its inputs and expected outputs.
+
+3. Review the Current Files and Edit History:
+   - Use the less command to examine both the solution file and the test file.
+   - Understand recent changes and the context of the code to identify any anomalies.
+
+4. Analyze Each Failed Test Individually:
+   - Explain the Failure:
+      a. Verbally articulate what the failure of this specific unit test means.
+      b. Describe the expected behavior versus the actual behavior observed.
+   - List All Potential Sources of Error:
+      a. Verbally consider possible bugs or logical errors in the solution code.
+      b. Explicitly Identify any mistakes or inaccuracies in the unit test code itself.
+   - Determine and Fix the Most Plausible Error:
+      a. Based on your analysis, explicitly pinpoint the most likely cause of the failure. 
+      b. Apply the appropriate fix to either the solution code or the test code.
+   - Ensure Consistency with Problem Statement and Docstring:
+      a. If applied change to unit tests that come from docstring or problem statement, update the docstring and/or problem statement.
+
+With each attempt to solve a failed unit test, you MUST follow the above analysis framework. You MUST give explicit reasoning over why unit tests failed, what modifications are called for, and why you plan to make those modifications.
+
+If after **ten** rounds of proper attempt on solving one unit test, the solution still can't pass all unit tests, you should choose to early terminate. We do not want to spend an infinite amount of time on a single function.
+
+## Let's get started! 
+
+Throughout your implementations of test and solution files, you must strictly adhere to the function name and function signature given above. The function name MUST be consistent throughout the folder.

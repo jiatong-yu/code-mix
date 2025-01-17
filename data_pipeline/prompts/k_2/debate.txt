@@ -1,0 +1,85 @@
+<|im_start|>user
+I need your help polishing exam questions for my {category} course. My teaching assistant has designed a question to test the following concepts:
+{skill_list_with_definition}
+Your job is to provide constructive criticism using the following rubric.
+
+## Rubric 
+1. Core Concepts Integration
+   - Test deep understanding of both aforementioned concepts.
+       * The two concepts MUST be combined in a meaningful and realistic way. Shallow combination that simply concatenate a task involving one concept and another task involving the other concept should be discouraged.
+   - Limited strictly to the scope of aforementioned concepts. 
+   - Must require no outside knowledge.
+
+2. Difficulty and Originality
+   - Time Constraint: Solvable within {time_limit_minutes} minutes
+   - Novelty: 
+       * Should be distinct from common textbook/online examples
+       * Novelty can be improved by embedding an abstract question into a novel real-world setting.
+   - Difficulty: The solution should be approximately {solution_lines} lines.
+
+3. Technical Constraints
+   - Must be a SINGLE function.
+   - Input Parameters: Only primary data types (int, float, str, list, tuple, dict) or composite data types.
+   - Return Value: Must be a primary data type or composite data types.
+   - Implementation: 
+     * No random functions
+     * No file I/O
+     * No global variables
+   -  In any part of the function, there should **NOT** be
+     * Any requirement of analysis of any sort, since it is not testable through unit tests.
+     * Any follow-up questions.
+     * Any example of input-output.
+
+4. Expression Clarity
+   - Problem statements must be precise and comprehensive. There should be no ambiguity. There should be only one valid interpretation of the task, the parameters, the outputs, etc. 
+   - Docstrings must include parameter descriptions and return value descriptions.
+
+## Exam Question to Review
+- Problem Statement 
+{problem_statement}
+
+- Function Details
+* function name: 
+{function_name}
+* function docstring:
+{function_docstring}
+*function signature:
+{function_signature}
+
+- Required Programming Language
+{programming_language}
+
+- Sample Solution
+{solution}
+
+## Core Requirements
+
+- Constructive criticism ONLY. 
+   * We only need feedback on whether the question violates any items on the rubric.
+- Focus exclusively on rubric violations
+- If all requirements are met, respond with: "The question meets all requirements, pass!"
+
+## Analysis Process
+Structure your feedback through the following steps:
+
+1. Concept Integration Assessment
+   - Evaluate whether the question thoroughly tests both given concepts.
+   - If one concept is underemphasized:
+     * Identify which concept needs more focus
+     * Provide one specific suggestion to integrate both concepts meaningfully
+
+2. Difficulty and Novelty Review
+   - Provide feedback if the question:
+     * Is extremely straightforward (solution requires only a few lines), OR
+     * Closely resembles commonly available online examples
+   - If these conditions apply:
+     * Identify the specific issue
+     * Provide one coherent suggestion for improvement
+
+3. Technical Compliance Check
+   - Review the Technical Constraints section from the rubric. For any violations:
+     * Identify the specific technical constraints violated
+     * Provide clear edit suggestions to resolve the violation.
+
+Please make sure your response contains ONLY the feedback to be sent to the teaching assistant, and nothing else.
+<|im_end|>¸

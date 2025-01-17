@@ -1,0 +1,27 @@
+<|im_start|>user
+Great job! This question has good quality and we will add it to the exam. 
+
+To test that students have thoroughly learned the given concepts, I need you to design another programming problem following the same rubric. This new question should be **as distinct as possible** from previous ones.
+
+To do so, please follow the following reasoning steps:
+1. Explicitly enumerate all topics involved in {skill_list_with_definition}.
+2. Brainstorm five ideas using five different topics.
+3. Review the question rubric. Choose the most feasible idea.
+4. Polish the idea into a programming question.
+
+You should format your response into a JSON object with the following fields:
+```json
+{{
+    "reasoning": str,
+    "function_name": str,
+    "function_signature": str,
+    "function_docstring":str,
+    "problem_statement": str,
+    "solution": str
+}}
+```
+- Show your reasoning steps through the "reasoning" field.
+- All strings must use proper JSON escaping (\n for newlines, \" for quotes)
+
+Again, we will integrate your response into an automated pipeline, therefore you **must** follow our format rule precisely. Please make sure that your response contains ONLY the json object.
+<|im_end|>

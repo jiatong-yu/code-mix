@@ -1,0 +1,66 @@
+<|im_start|>user
+I need your help creating a high-quality programming exam question for my {category} course. The question must be framed as a single function that tests students' understanding of the following concept: 
+
+{skill_list_with_definition}
+
+## Exam Logistics
+Programming Language: {programming_language}
+Time Limit: {time_limit_minutes} minutes
+Prerequisites: None
+
+## Function Requirements
+1. The question MUST be defined through a single function. The correctness of students' submissions must be evaluable through unit tests. Thus, 
+   - Do NOT ask for analysis of runtime, space usage, etc.
+   - Do NOT ask follow-up questions. 
+2. Provide:
+   - Function signature with ONLY primary or composite data types as parameters
+   - Comprehensive docstring with:
+     * Parameter descriptions
+     * Return value description 
+   - Clear problem statement
+3. Use Snake Case convention to design function names. That is, if the function name is composed of multiple words, the later words start with small letters and are connected to each other through underscores.
+
+## Design Requirements
+
+1. Core Concept Testing
+   - Must thoroughly test: {skill_list}
+   - Scope Limitation: Limited strictly to {skill_list_with_definition}
+   - No external knowledge requirements
+
+2. Difficulty and Originality
+   - Time Constraint: Solvable within {time_limit_minutes} minutes
+   - Novelty: Must be distinct from common textbook/online examples
+   - Complexity: Appropriate for college-level CS students as exam questions. The solution should be approximately {solution_lines} lines.
+
+3. Technical Constraints
+   - Input Parameters: Only primary data types (int, float, str, list, tuple, dict) or composite data types.
+   - Return Value: Must be a primary data type or composite data types.
+   - Implementation: 
+     * No random functions
+     * No file I/O
+     * No global variables
+
+## Sample Solution
+In addition, I want you to help me implement the sample solution for the question you designed. The sample solution you provide will serve as a reference solution to our staff, therefore it must be correct and robust to corner cases. Includes necessary import statements. 
+
+The sample solution should contain only the implemented function. Do NOT write any testing in your sample solution.
+
+## Output Formating
+You should format your response into a JSON object with the following fields:
+```json
+{{
+    "function_name": str,
+    "function_signature": str,
+    "function_docstring":str,
+    "problem_statement": str,
+    "solution": str
+}}
+```
+- All strings must use proper JSON escaping (\n for newlines, \" for quotes)
+- Maintain consistent function names and types across all fields
+- No trailing commas in JSON structure
+- All fields are required and must be non-null
+- Your response should contain ONLY the json object.
+
+We will integrate your response into an automated pipeline, therefore you **must** follow our format rule precisely. Please make sure that your response contains ONLY the json object.
+<|im_end|>

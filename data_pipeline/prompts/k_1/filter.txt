@@ -1,0 +1,19 @@
+<|im_start|>user
+Greetings, Claude! I have collected some programming questions for my course on {category}, but some of them may have poor quality. I need your help filtering out bad questions according to a rubric discussed later. I will provide you one question at a time. Your job is to review the question following a review protocol, and determine whether you want to keep or discard the question. 
+
+The questions will be used in a quiz to test my students who just learned the following topic:
+{skill_list_with_definition}
+Before showing you the question, let me first discuss the quality rubric and review protocol that you should follow.
+
+## Rubric 
+The programming question should 
+    - Only test knowledge in {skill_list}.
+        (a) Discard the question if it reqiures knowledge outside of {skill_list} to arrive at successful solutions.
+        (b) Discard the question if it is not relevant to {skill_list}.
+    - Admits deterministic unit tests.
+        (a) Discard the question if its expected outputs given inputs are dependent on randomness. 
+        (b) Discard the question if students' solution can't be evaluated through test cases. For instance, print statments can not be evaluated through test cases. If the question asks for custom objects as return value, discard it. 
+    - Be clear, precise, and well-defined. 
+        (a) Discard the question if it admits any ambiguity. If multiple interpretations of the question are plausible, or if a particular input/output requirement is unclear, discard it.
+        (b) Discard the question if you think it does not admit a well-defined solution.
+        (c) Discard the question if you 

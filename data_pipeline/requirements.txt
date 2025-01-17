@@ -1,0 +1,8 @@
+anthropic==0.39.0
+boto3==1.35.61
+httpx==0.27.2
+openai==1.54.4
+protobuf==5.28.3
+PyYAML==6.0.2
+PyYAML==6.0.2
+tqdm==4.66.5

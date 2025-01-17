@@ -1,0 +1,44 @@
+skill_path: "./skills/algorithms_plus.txt"
+output_folder: "data/01.06/algo" # make sure relative path.
+exclusion_config: "./skills/exclusion.json"
+absolute_path_base: "/Users/jiatongyu/code/code-skill-mix/data_pipeline" # CHANGE THIS TO YOUR SYSTEM's PATH
+k_1:
+  generate: false
+  verify: true
+  question_per_skill: 5
+  N: 10
+k_2:
+  generate: true
+  verify: true
+  question_per_skill: 1
+  skill_list_path: null #if given, generate questions for these skills only
+  use_prev_skills: false
+  dense: true
+  N: null
+  
+generation_config:
+  language: "c++"
+  extension: "cpp"
+  test_framework: "googletest"
+  category: "Algorithms and Data Structures"
+  time_limit: 30 # in minutes, used to adjust difficulty.
+  solution_lines: "30 to 60" # used to adjust difficulty.
+
+verifier_attempts: 3 #number of verification attempts before deleting the question.
+prompt_paths:
+  generate:
+    k_1: "./prompts/k_1/generate.txt"
+    k_2: "./prompts/k_2/generate.txt"
+  debate:
+    k_1: "./prompts/k_1/debate.txt"
+    k_2: "./prompts/k_2/debate.txt"
+  get_next: "./prompts/eval/get_next.txt"
+  verifier_agent: "./prompts/eval/verifier.txt"
+  filter: "./prompts/eval/filter.txt"
+model_configs:
+  generate:
+    model: "claude-3-5-sonnet-20240620"
+    temperature: 0.8
+  debate:
+    model: "claude-3-5-sonnet-20240620"
+    temperature: 0

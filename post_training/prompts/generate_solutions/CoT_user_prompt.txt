@@ -1,0 +1,21 @@
+Please solve the following question:
+# Description
+{description}
+
+# Function Specification
+Function name: {function_name}
+Function signature: {function_signature}
+Function docstring: {function_docstring}
+Programming Language: {language}
+
+## Output Requirements
+Formulate your output through the following steps:
+1. Review the question
+    - Summarize the task. Decompose the task into components.
+2. Plan the steps
+    - For each component, identify the most promising approach.
+    - Rollout code blocks for each component.
+3. Finalize solution
+    - Implement the entire solution including imports.
+    - Wrap solutions with "```cpp" and "```" markers.
+There's no need to write unit tests or main methods. 
