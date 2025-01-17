@@ -1,0 +1,12 @@
+data_path: ./training_data/cache/example.json #replace with your own data
+output_path: ./training_data/example.json
+dataset_template: instruct #[instruct, chat]
+training_method: best_of_n #[best_of_n, dpo, grpo, gold_solution]
+column: "code" #either "code" or "raw_output"
+
+# for PPO, DPO, or SimPO ONLY.
+preference_config:
+  minimum_preferred_score: null # if set, delete preferred data if below threshold
+  maximum_dispreferred_score: 0.6 # if set, delete dispreferred data if above threshold
+  num_preference_pairs_per_question: 1 # Between 1 and {N \choose 2}. 
+  

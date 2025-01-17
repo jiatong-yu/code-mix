@@ -10,7 +10,7 @@ def main(args):
     # Create output path with proper directory structure
     output_dir = os.path.join("training_data", "cache", args.model_name)
     os.makedirs(output_dir, exist_ok=True)
-    output_path = os.path.join(output_dir, f"{args.task_name}.json")
+    output_path = os.path.join(output_dir, f"{args.task_name}_N={args.num_samples_per_question}.json")
     
     if os.path.exists(args.output_path):
         print(f"Resuming from existing progress at {output_path}")
@@ -79,11 +79,17 @@ def main(args):
                 "raw_output": output,
                 "code": extract_code(output)
             })
-        res[qid] = qid_outputs
+        res[qid] = {
+            "system": "You are a helpful assistant.",
+            "user": user_input,
+            "responses": qid_outputs
+        }
 
         # Save intermediate results
         with open(output_path, "w") as f:
             json.dump(res, f, indent=4)
+        
+        print(f"Saved to {output_path}. Finished.")
 
 
 if __name__ == "__main__":

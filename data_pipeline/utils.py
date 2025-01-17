@@ -339,43 +339,33 @@ class EvaluationParser():
         }
     
     def score_all_solutions(self, solution_path):
+        """
+        solution_path should be file generated from generate_solutions.py for parsing compatibility. 
+        """
         with open(solution_path, 'r') as file:
             solutions = json.load(file)
+
         for qid in tqdm(solutions):
-            # could have multiple solutions
-            if type(solutions[qid]) == list:
-                scored_solutions = []
-                for solution in solutions[qid]:
-                    result = self.evaluate_solution(qid, solution)
-                    if not result["status"]:
-                        scored_solutions.append({
-                            "solution": solution,
-                            "score": 0,
-                            "message": result["message"]
-                        })
-                    else:
-                        score = (result["message"]["total_tests"] - result["message"]["total_failures"] ) / result["message"]["total_tests"]
-                        scored_solutions.append({
-                            "solution": solution,
-                            "score": score,
-                            "message": result["message"]
-                        })
-                solutions[qid] = scored_solutions
-            else:
-                result = self.evaluate_solution(qid, solutions[qid])
+            scored_solutions = []
+            responses = solutions[qid]["responses"]
+            for solution in responses:
+                result = self.evaluate_solution(qid, solution["code"])
                 if not result["status"]:
-                    solutions[qid] = {
-                        "solution": solutions[qid],
+                    scored_solutions.append({
+                        "solution": solution,
                         "score": 0,
                         "message": result["message"]
-                    }
+                    })
                 else:
                     score = (result["message"]["total_tests"] - result["message"]["total_failures"] ) / result["message"]["total_tests"]
-                    solutions[qid] = {
-                        "solution": solutions[qid],
+                    
+                    scored_solutions.append({
+                        "solution": solution,
                         "score": score,
                         "message": result["message"]
-                    } 
+                    })
+            solutions["responses"] = scored_solutions
+
         with open(solution_path, 'w') as f:
             json.dump(solutions, f, indent=4)
         
